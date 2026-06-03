@@ -8,9 +8,9 @@ import joblib
 import time
 
 # ========== 配置（保持你原有路径不变） ==========
-DATA_PATH = Path("./Data/wuhan_named.csv")
-GROUPS_PATH = Path("./Data/spatial_groups.npy")
-OUTPUT_DIR = Path("./Data/Models")
+DATA_PATH = Path("/home/orange/file/pc/pku_sgis/work/Data/wuhan_named.csv")
+GROUPS_PATH = Path("/home/orange/file/pc/pku_sgis/work/Data/spatial_groups.npy")
+OUTPUT_DIR = Path("/home/orange/file/pc/pku_sgis/work/Data/Models")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 # ========== 内存与速度优化参数 ==========
@@ -30,9 +30,8 @@ df = pd.read_csv(DATA_PATH)
 groups = np.load(GROUPS_PATH)
 
 # 保留坐标、特征、标签
-# xy = df[["x", "y"]].copy()  # 完整坐标
-# X = df.drop(["x", "y", "LST", "LU_class"], axis=1)
-X = df.drop(["LST", "LU_class"], axis=1)
+xy = df[["x", "y"]].copy()  # 完整坐标
+X = df.drop(["x", "y", "LST", "LU_class"], axis=1)
 y = df["LST"]
 
 print(f"数据集大小: {X.shape[0]} 样本，{X.shape[1]} 特征")
@@ -125,7 +124,7 @@ print("正在保存模型（内含x/y坐标、特征名、全量数据）...")
 # 把所有需要GeoShapley的信息全部打包
 model_package = {
     "model": final_model,  # 随机森林模型
-    # "xy_coords": xy.values,  # 全部样本 x,y 坐标
+    "xy_coords": xy.values,  # 全部样本 x,y 坐标
     "feature_names": X.columns.tolist(),  # 特征名
     "X_data": X.values,  # 全量特征
     "y_true": y.values  # 真实LST

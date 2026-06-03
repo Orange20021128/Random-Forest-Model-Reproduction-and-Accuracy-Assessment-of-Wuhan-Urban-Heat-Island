@@ -7,9 +7,9 @@ import warnings
 warnings.filterwarnings("ignore")  # 忽略空间权重的无关警告
 
 # ========== 配置（与简化版03完全一致，无需修改） ==========
-DATA_PATH = Path("/home/orange/file/pc/pku_sgis/work/Data/wuhan_named.csv")
-MODEL_DIR = Path("/home/orange/file/pc/pku_sgis/work/Data/Models")
-OUTPUT_DIR = Path("/home/orange/file/pc/pku_sgis/work/Data/Results")
+DATA_PATH = Path("./Data/wuhan_named.csv")
+MODEL_DIR = Path("./Data/Models")
+OUTPUT_DIR = Path("./Data/Results")
 
 # ========== 加载数据 ==========
 print("="*60)

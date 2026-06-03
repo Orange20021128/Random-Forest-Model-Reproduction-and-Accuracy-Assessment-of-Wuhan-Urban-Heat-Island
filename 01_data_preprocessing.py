@@ -5,10 +5,10 @@ import h5py
 from pathlib import Path
 
 # ========== 配置 ==========
-DATA_DIR = Path("/home/orange/file/pc/pku_sgis/work/Data/WuHan")          # 所有 tif 所在文件夹
+DATA_DIR = Path("./Data/WuHan")          # 所有 tif 所在文件夹
 MASK_PATH = DATA_DIR / "LUCL.tif"
-OUT_HDF5 = "/home/orange/file/pc/pku_sgis/work/Data/wuhan.h5"
-OUT_CSV  = "/home/orange/file/pc/pku_sgis/work/Data/wuhan.csv"   # 修改为带坐标的最终文件
+OUT_HDF5 = ".//Data/wuhan.h5"
+OUT_CSV  = "./Data/wuhan.csv"   # 修改为带坐标的最终文件
 
 # 因子文件命名规则（请根据实际情况修改）
 # 格式: ai1.tif, ed1.tif, frac1.tif, pland1.tif ... 共8类

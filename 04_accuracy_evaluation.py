@@ -5,9 +5,9 @@ from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 import joblib
 
 # ========== 配置（与简化版03完全一致，无需修改） ==========
-DATA_PATH = Path("/home/orange/file/pc/pku_sgis/work/Data/wuhan_named.csv")
-MODEL_DIR = Path("/home/orange/file/pc/pku_sgis/work/Data/Models")
-OUTPUT_DIR = Path("/home/orange/file/pc/pku_sgis/work/Data/Results")
+DATA_PATH = Path("./Data/wuhan_named.csv")
+MODEL_DIR = Path("./Data/Models")
+OUTPUT_DIR = Path("./Data/Results")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 # ========== 加载简化版03已生成的结果 ==========

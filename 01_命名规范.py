@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 
 # ========== 路径配置 ==========
-BASE_DIR = Path("/home/orange/file/pc/pku_sgis/work/Data")   # 根据实际情况修改
+BASE_DIR = Path("./Data")   # 根据实际情况修改
 INPUT_CSV  = BASE_DIR / "wuhan.csv"      # 上一步生成的带坐标数据集
 OUTPUT_CSV = BASE_DIR / "wuhan_named.csv"       # 列名规范化后的输出文件
 

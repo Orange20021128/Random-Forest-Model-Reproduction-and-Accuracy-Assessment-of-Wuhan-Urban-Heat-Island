@@ -6,7 +6,7 @@ from sklearn.model_selection import GroupKFold
 from pathlib import Path
 
 # 配置
-DATA_PATH = Path("/home/orange/file/pc/pku_sgis/work/Data/wuhan_named.csv")
+DATA_PATH = Path("./Data/wuhan_named.csv")
 N_CLUSTERS = 100  # 论文中使用100个地理簇
 N_FOLDS = 5       # 5折交叉验证
 
@@ -37,5 +37,5 @@ for fold, (train_idx, test_idx) in enumerate(gkf.split(X, y, groups=groups)):
     print(f"  Fold {fold+1}: 训练集 {len(train_idx)} 样本，测试集 {len(test_idx)} 样本")
 
 # 保存分组结果（后续模型训练使用）
-np.save(Path("/home/orange/file/pc/pku_sgis/work/Data/spatial_groups.npy"), groups)
+np.save(Path("./Data/spatial_groups.npy"), groups)
 print("\n空间分组结果已保存至 spatial_groups.npy")
